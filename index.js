@@ -5,7 +5,7 @@ const fs = require('fs');
 // Config file
 // const dotenv = require("dotenv")
 // dotenv.config({ path: `${__dirname}/config.env` })
-// const slugify = require("slugify")
+const slugify = require("slugify")
 
 const dataInserter = require('./module/dataInserter');
 const sluger = require('./module/sluger');
