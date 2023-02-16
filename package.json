@@ -1,0 +1,16 @@
+{
+  "name": "tets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:port": "SET PORT=7000&&node index.js",
+    "start": "nodemon index.js -e js,jsx,html,json"
+  },
+  "author": "Vipul goel",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "slugify": "^1.6.5"
+  }
+}
