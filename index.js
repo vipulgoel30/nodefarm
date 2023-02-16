@@ -3,9 +3,9 @@ const url = require("url")
 const fs = require('fs');
 
 // Config file
-const dotenv = require("dotenv")
-dotenv.config({ path: `${__dirname}/config.env` })
-const slugify = require("slugify")
+// const dotenv = require("dotenv")
+// dotenv.config({ path: `${__dirname}/config.env` })
+// const slugify = require("slugify")
 
 const dataInserter = require('./module/dataInserter');
 const sluger = require('./module/sluger');
@@ -21,7 +21,8 @@ const products = JSON.parse(fs.readFileSync(`${__dirname}/dev-data/data.json`, "
 
 const server = http.createServer((req, res) => {
     const { query, pathname } = url.parse(req.url, true);
-    if (pathname === "/overview") {
+    console.log(pathname);
+    if (pathname === "/" || pathname === "/overview") {
         res.writeHead(200, { "Content-type": "text/html" })
         res.end(overviewTemplate.replace('{%OVERVIEW%}', products.map((product) => dataInserter(overviewProductTemplate, product)).join('')));
 
