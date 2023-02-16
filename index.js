@@ -2,10 +2,6 @@ const http = require("http");
 const url = require("url")
 const fs = require('fs');
 
-// Config file
-// const dotenv = require("dotenv")
-// dotenv.config({ path: `${__dirname}/config.env` })
-const slugify = require("slugify")
 
 const dataInserter = require('./module/dataInserter');
 const sluger = require('./module/sluger');
@@ -41,7 +37,7 @@ const server = http.createServer((req, res) => {
 
 });
 
-const port = process.env.PORT
+const port = process.env.PORT || 7000
 
 // server listen
 server.listen(port, "127.0.0.1", () => {
