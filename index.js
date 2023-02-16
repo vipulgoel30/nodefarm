@@ -23,7 +23,7 @@ const server = http.createServer((req, res) => {
         res.end(overviewTemplate.replace('{%OVERVIEW%}', products.map((product) => dataInserter(overviewProductTemplate, product)).join('')));
 
     } else if (pathname === "/product") {
-        const productQuery = query.id || sluger(product[0].productName);
+        const productQuery = query.id || sluger(products[0].productName);
         const [product] = products.filter((product) => sluger(product.productName) === productQuery);
 
         res.writeHead(200, { "Content-type": "text/html" })
