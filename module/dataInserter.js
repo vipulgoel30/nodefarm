@@ -1,7 +1,7 @@
 const sluger = require('./sluger');
 
 module.exports = (template, data) => {
-    template = template.replace(/{% PRODUCT_NAME %}/g, data.productName);
+    template = template.replace(/{%PRODUCT_NAME%}/g, data.productName);
     template = template.replace(/{%IMAGE%}/g, data.image);
     template = template.replace(/{%PRICE%}/g, data.price);
     template = template.replace('{%QUANTITY%}', data.quantity);
